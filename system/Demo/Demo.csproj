@@ -55,13 +55,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CheckOutWindow.xaml.cs">
+    <Compile Include="client\CheckOutWindow.xaml.cs">
       <DependentUpon>CheckOutWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TurnWindow.xaml.cs">
+    <Compile Include="client\TurnWindow.xaml.cs">
       <DependentUpon>TurnWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="CheckOutWindow.xaml">
+    <Compile Include="server\ClosingWindow.xaml.cs">
+      <DependentUpon>ClosingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="server\OrdersWindow.xaml.cs">
+      <DependentUpon>OrdersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="server\DishWindow.xaml.cs">
+      <DependentUpon>DishWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="server\ServerWindow.xaml.cs">
+      <DependentUpon>ServerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="server\TableShowWindow.xaml.cs">
+      <DependentUpon>TableShowWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="server\StatisticsWindow.xaml.cs">
+      <DependentUpon>StatisticsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="client\CheckOutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="server\ClosingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="server\OrdersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="server\DishWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,7 +99,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="client\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -80,21 +110,33 @@
     <Compile Include="LeadWindow.xaml.cs">
       <DependentUpon>LeadWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="client\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="OpenWindow.xaml">
+    <Page Include="client\OpenWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TurnWindow.xaml">
+    <Page Include="client\TurnWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="server\ServerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="server\TableShowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="server\StatisticsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OpenWindow.xaml.cs">
+    <Compile Include="client\OpenWindow.xaml.cs">
       <DependentUpon>OpenWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -120,6 +162,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

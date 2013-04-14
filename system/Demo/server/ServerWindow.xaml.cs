@@ -14,33 +14,38 @@ using System.Windows.Shapes;
 namespace Demo
 {
     /// <summary>
-    /// LeadWindow.xaml 的交互逻辑
+    /// ServerWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class LeadWindow : Window
+    public partial class ServerWindow : Window
     {
-        public LeadWindow()
+        public ServerWindow()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            new MainWindow().Show();
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            new OpenWindow().Show();
+            new TableShowWindow().Show();
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            new TurnWindow().Show();
+            new DishWindow().Show();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            new OrdersWindow().Show();
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            new ServerWindow().Show();
+            new ClosingWindow().Show();
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            new StatisticsWindow().Show();
         }
     }
 }
