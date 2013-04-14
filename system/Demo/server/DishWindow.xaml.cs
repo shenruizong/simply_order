@@ -21,6 +21,24 @@ namespace Demo
         public DishWindow()
         {
             InitializeComponent();
+            List<dish> dish = new List<dish>()
+            {
+                new dish{name = "菜品1",price="99￥"},
+                new dish{name = "菜品2",price="99￥"},
+                new dish{name = "菜品3",price="99￥"},
+                new dish{name = "菜品4",price="99￥"},
+                new dish{name = "菜品5",price="99￥"},
+                new dish{name = "菜品6",price="99￥"},
+                new dish{name = "菜品7",price="99￥"},
+                new dish{name = "菜品8",price="99￥"},
+                new dish{name = "菜品9",price="99￥"},
+            };
+            listView1.ItemsSource = dish;
         }
+    }
+    class dish
+    {
+        public string name{ get; set; }
+        public string price{ get; set; }
     }
 }
