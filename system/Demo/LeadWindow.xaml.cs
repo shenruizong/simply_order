@@ -42,5 +42,20 @@ namespace Demo
         {
             new ServerWindow().Show();
         }
+
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            new CheckOutWindow().Show();
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            new DishWindow().Show();
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            new OrdersWindow().Show();
+        }
     }
 }

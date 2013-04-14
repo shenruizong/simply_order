@@ -61,6 +61,9 @@
     <Compile Include="client\TurnWindow.xaml.cs">
       <DependentUpon>TurnWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="server\ClosingSelWindow.xaml.cs">
+      <DependentUpon>ClosingSelWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="server\ClosingWindow.xaml.cs">
       <DependentUpon>ClosingWindow.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
       <DependentUpon>StatisticsWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="client\CheckOutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="server\ClosingSelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
