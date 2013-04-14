@@ -23,5 +23,10 @@ namespace Demo
         {
             InitializeComponent();
         }
+
+        private void button16_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
