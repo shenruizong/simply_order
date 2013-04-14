@@ -58,6 +58,9 @@
     <Compile Include="client\CheckOutWindow.xaml.cs">
       <DependentUpon>CheckOutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="client\OrderedWindow.xaml.cs">
+      <DependentUpon>OrderedWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="client\TurnWindow.xaml.cs">
       <DependentUpon>TurnWindow.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
       <DependentUpon>StatisticsWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="client\CheckOutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="client\OrderedWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
