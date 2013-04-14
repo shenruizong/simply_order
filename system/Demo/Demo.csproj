@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TurnWindow.xaml.cs">
+      <DependentUpon>TurnWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="LeadWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,6 +78,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="OpenWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TurnWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
