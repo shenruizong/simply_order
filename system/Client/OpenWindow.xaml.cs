@@ -102,5 +102,26 @@ namespace Client
             Close();
         }
 
+        private void SendOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataBase.OrdersModel orders = new DataBase.OrdersModel();
+            DataBase.DatabaseDataSet.ordersDataTable ordersDt = new DataBase.DatabaseDataSet.ordersDataTable();
+            DataRow OrdersRow = ordersDt.NewRow();
+            OrdersRow["order_num"] = Order_num;
+            OrdersRow["table_id"] = (int)TableRow["id"];
+            OrdersRow["create_time"] = DateTime.Now.ToFileTime();
+            ordersDt.Rows.Add(OrdersRow);
+            DataRow[] listRow = Order_list.Select();
+            if (orders.InsertOrder(ordersDt, listRow))
+            {
+                MessageBox.Show("添加订单成功");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("出错！");
+            }
+        }
+
     }
 }

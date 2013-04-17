@@ -71,10 +71,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OrderedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OpenWindow.xaml.cs">
       <DependentUpon>OpenWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderedWindow.xaml.cs">
+      <DependentUpon>OrderedWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

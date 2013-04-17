@@ -30,14 +30,14 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Dish_name}" Header="菜名" Width="100" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Dish_price}" Header="价格" Width="55" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Dish_price}" Header="单价" Width="55" />
                     <GridViewColumn DisplayMemberBinding="{Binding Dish_num}" Header="数量" Width="55" />
                 </GridView>
             </ListView.View>
         </ListView>
         <Label Content="总价" Height="33" HorizontalAlignment="Left" Margin="10,0,0,72" Name="label2" VerticalAlignment="Bottom" FontSize="18" />
         <TextBlock Height="33" HorizontalAlignment="Left" Margin="58,0,0,68" Name="total_pricesBlock" Text="" VerticalAlignment="Bottom" Width="183" FontSize="18" />
-        <Button Content="发送订单" Height="41" HorizontalAlignment="Left" Margin="10,0,0,12" Name="button14" VerticalAlignment="Bottom" Width="76" />
+        <Button Content="发送订单" Height="41" HorizontalAlignment="Left" Margin="10,0,0,12" Name="SendOrderButton" VerticalAlignment="Bottom" Width="76" Click="SendOrderButton_Click" />
         <Button Content="取消订单" Height="41" HorizontalAlignment="Left" Margin="165,0,0,12" Name="CancelOrder" VerticalAlignment="Bottom" Width="76" Click="CancelOrder_Click" />
         <Button Content="删" Height="41" HorizontalAlignment="Left" Margin="247,38,0,0" Name="DelOrderButton" VerticalAlignment="Top" Width="52" FontSize="18" Click="DelOrderButton_Click" />
     </Grid>
