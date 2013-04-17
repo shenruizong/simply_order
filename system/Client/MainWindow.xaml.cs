@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace Client
 {
@@ -27,6 +28,13 @@ namespace Client
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataBase.TablesModel tables = new DataBase.TablesModel();
+            DataTable AllTable = tables.SelectAll();
+            TablesList.ItemsSource = AllTable.DefaultView;
         }
     }
 }
