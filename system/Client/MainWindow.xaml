@@ -1,7 +1,19 @@
 ﻿<Window x:Class="Client.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="服务员界面" Height="600" Width="800" WindowStyle="None" Loaded="Window_Loaded" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        Title="服务员界面" 
+        Height="600" 
+        Width="800" 
+        WindowStyle="None" 
+        Loaded="Window_Loaded"
+        ResizeMode="NoResize" 
+        WindowState="Maximized" 
+        WindowStartupLocation="CenterScreen"
+        xmlns:local="clr-namespace:Client"
+        >
+    <Window.Resources>
+        <local:TableColorConverter x:Key="tablecolor"/>
+    </Window.Resources>
     <Grid>
         <ItemsControl x:Name="TablesList" Margin="12,12,115,0">
             <ItemsControl.ItemsPanel>
@@ -14,7 +26,7 @@
                     <Button Height="55" Width="100" >
                         <Button.Style>
                             <Style TargetType="Button">
-                                <Setter Property="Background" Value="#FF6FF940" />
+                                        <Setter Property="Background" Value="{Binding Path=type_id, Converter={StaticResource tablecolor}}" />
                             </Style>
                         </Button.Style>
                         <Grid>
