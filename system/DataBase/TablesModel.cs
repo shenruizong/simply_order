@@ -8,6 +8,10 @@ namespace DataBase
 {
     public class TablesModel
     {
+        /// <summary>
+        /// 查询所有桌台表信息
+        /// </summary>
+        /// <returns></returns>
         public DataTable SelectAll()
         {
             DatabaseDataSetTableAdapters.tablesTableAdapter tables = new DatabaseDataSetTableAdapters.tablesTableAdapter();
