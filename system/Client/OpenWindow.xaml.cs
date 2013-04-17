@@ -65,10 +65,42 @@ namespace Client
                 OrderList_Row["Dish_price"] = DishRow["price"];
                 Order_list.Rows.Add(OrderList_Row);
             }
+            CountPrice();
         }
         private void CountPrice()
         {
- 
+            DataRow[] rows = Order_list.Select();
+            int ALLPrice = 0;
+            foreach (DataRow row in rows)
+            {
+                int price = (int)row["Dish_price"];
+                int num = (int)row["Dish_num"];
+                int subtotal = price * num;
+                ALLPrice = ALLPrice + subtotal;
+            }
+            total_pricesBlock.Text = ALLPrice.ToString(); ;
         }
+
+        private void DelOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DataRowView RowView = (DataRowView)OrderListView.SelectedItem;
+                DataRow row = RowView.Row;
+                Order_list.Rows.Remove(row);
+                CountPrice();
+            }
+            catch (Exception ex)
+            {
+ 
+            }
+            
+        }
+
+        private void CancelOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
     }
 }
