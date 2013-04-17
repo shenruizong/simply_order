@@ -18,5 +18,12 @@ namespace DataBase
             DataTable dt = tables.GetData();
             return dt;
         }
+        public void ChangeTableType(DataRowView rowView,int type)
+        {
+            DatabaseDataSetTableAdapters.tablesTableAdapter tables = new DatabaseDataSetTableAdapters.tablesTableAdapter();
+            DataRow row = rowView.Row;
+            row["type_id"] = type;
+            tables.Update(row);
+        }
     }
 }
