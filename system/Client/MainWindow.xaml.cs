@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
+using System.Globalization;
 
 namespace Client
 {
@@ -35,6 +36,26 @@ namespace Client
             DataBase.TablesModel tables = new DataBase.TablesModel();
             DataTable AllTable = tables.SelectAll();
             TablesList.ItemsSource = AllTable.DefaultView;
+        }
+    }
+    [ValueConversion(typeof(int), typeof(String))]
+    public class TableColorConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            int reValue = System.Convert.ToInt32(value);
+            string BackValue= "#FF6FF940";//初始化为开台
+            if (reValue == 2)//已开台
+            {
+                BackValue = "Red";
+            }
+            return BackValue;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string strValue = value.ToString();
+            return value;
         }
     }
 }
