@@ -37,6 +37,23 @@ namespace Client
             DataTable AllTable = tables.SelectAll();
             TablesList.ItemsSource = AllTable.DefaultView;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button but = (Button)sender;
+            DataRowView TableRow = (DataRowView)but.DataContext;
+            int type_id = (int)TableRow["type_id"];
+            if (type_id == 1)//未开台
+            {
+                OpenWindow open = new OpenWindow();
+                open.TableRow = TableRow;
+                open.Show();
+            }
+            else
+            {
+                MessageBox.Show("急什么！还没开发呢！");
+            }
+        }
     }
     [ValueConversion(typeof(int), typeof(String))]
     public class TableColorConverter : IValueConverter

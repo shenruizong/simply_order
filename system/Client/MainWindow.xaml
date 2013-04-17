@@ -23,10 +23,10 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Height="55" Width="100" >
+                    <Button Height="55" Width="100" Click="Button_Click" DataContext="{Binding}">
                         <Button.Style>
                             <Style TargetType="Button">
-                                        <Setter Property="Background" Value="{Binding Path=type_id, Converter={StaticResource tablecolor}}" />
+                                <Setter Property="Background" Value="{Binding Path=type_id, Converter={StaticResource tablecolor}}" />
                             </Style>
                         </Button.Style>
                         <Grid>
@@ -36,7 +36,7 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        
+
         <Label Content="未开台" Height="28" HorizontalAlignment="Right" Margin="0,19,40,0" Name="label1" VerticalAlignment="Top" />
         <Rectangle Name="rectangle1" Stroke="Black" Margin="0,41,22,0" Fill="#FF6FF940" Height="22" VerticalAlignment="Top" HorizontalAlignment="Right" Width="61" />
         <Label Content="已开台" Height="25" HorizontalAlignment="Right" Margin="0,69,40,0" Name="label2" VerticalAlignment="Top" />
