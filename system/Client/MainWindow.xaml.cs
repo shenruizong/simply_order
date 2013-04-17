@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace system
+namespace Client
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -22,6 +22,11 @@ namespace system
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
