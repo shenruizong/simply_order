@@ -23,5 +23,10 @@ namespace server
         {
             InitializeComponent();
         }
+
+        private void DishButton_Click(object sender, RoutedEventArgs e)
+        {
+            new DishWindow().Show();
+        }
     }
 }

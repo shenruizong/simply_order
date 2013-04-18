@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace server
 {
@@ -21,6 +22,13 @@ namespace server
         public DishWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataBase.DishModel Dish = new DataBase.DishModel();
+            DataTable dt = Dish.SelectAll();
+            DishList.ItemsSource = dt.DefaultView;
         }
     }
 }

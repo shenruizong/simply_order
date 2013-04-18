@@ -1,9 +1,10 @@
-﻿<Window x:Class="server.DishWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="DishWindow" Height="438" Width="676">
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="server.DishWindow"
+        Title="DishWindow" Height="438" Width="676" Loaded="Window_Loaded">
     <Grid>
-        <ItemsControl>
+        <ItemsControl Name="DishList">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel HorizontalAlignment="Left"/>
@@ -11,9 +12,10 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button >
-                        <Grid>
-                            <TextBlock Text="{Binding name}"/>
+                    <Button Width="100" Height="60" Background="#FFA2F192" ClickMode="Press" >
+                        <Grid Width="90" Height="50">
+                            <TextBlock Text="{Binding name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding price}" Margin="32,0,0,0" VerticalAlignment="Bottom" RenderTransformOrigin="1.092,0.321" HorizontalAlignment="Right"/>
                         </Grid>
                     </Button>
                 </DataTemplate>
