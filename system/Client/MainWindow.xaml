@@ -42,5 +42,7 @@
         <Label Content="已开台" Height="25" HorizontalAlignment="Right" Margin="0,69,40,0" Name="label2" VerticalAlignment="Top" />
         <Rectangle Fill="Red" Margin="0,100,22,0" Name="rectangle2" Stroke="Black" Height="22" VerticalAlignment="Top" HorizontalAlignment="Right" Width="61" />
         <Button Content="退出" Height="50" HorizontalAlignment="Right" Margin="0,0,18,12" Name="ExitButton" VerticalAlignment="Bottom" Width="65" FontSize="18" Click="ExitButton_Click" />
+        <Label Content="待结账" Height="25" HorizontalAlignment="Right" Margin="0,135,39,0" Name="label3" VerticalAlignment="Top" />
+        <Rectangle Fill="Blue" Height="22" HorizontalAlignment="Right" Margin="0,166,21,0" Name="rectangle3" Stroke="Black" VerticalAlignment="Top" Width="61" />
     </Grid>
 </Window>

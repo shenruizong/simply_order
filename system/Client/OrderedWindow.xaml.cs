@@ -55,7 +55,12 @@ namespace Client
 
         private void TurnTableButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            TurnTableWindow turn = new TurnTableWindow();
+            turn.TableRow = TableRow;
+            if (turn.ShowDialog().Value)
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -92,9 +92,9 @@ namespace Client
             }
             catch (Exception ex)
             {
- 
+
             }
-            
+
         }
 
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
@@ -114,14 +114,9 @@ namespace Client
             DataRow[] listRow = Order_list.Select();
             if (orders.InsertOrder(ordersDt, listRow))
             {
-                MessageBox.Show("添加订单成功");
                 DataBase.TablesModel tables = new DataBase.TablesModel();
                 tables.ChangeTableType(TableRow, 2);
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("出错！");
             }
         }
 

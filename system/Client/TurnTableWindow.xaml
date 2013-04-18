@@ -1,0 +1,26 @@
+﻿<Window x:Class="Client.TurnTableWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TurnTableWindow" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="358" d:DesignWidth="656" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+    <Grid>
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="192,33,0,0" Name="FirTableBlock" Text="{Binding name}" VerticalAlignment="Top" Width="54" FontSize="20" />
+        
+        <ItemsControl Margin="12,108,0,71" Name="TablesList" HorizontalAlignment="Left" Width="610">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Left"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding name}" Background="#FF6FF940" Height="55" Width="100" Click="Button_Click" DataContext="{Binding}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Label Content="以下为可转桌台" Height="28" HorizontalAlignment="Left" Margin="12,74,0,0" Name="label1" VerticalAlignment="Top" />
+        <Button Content="确认转台" Height="53" HorizontalAlignment="Left" Margin="175,0,0,12" Name="EnterButton" VerticalAlignment="Bottom" Width="94" Click="EnterButton_Click" />
+        <Button Content="取消转台" HorizontalAlignment="Left" Margin="343,0,0,12" Name="CancelButton" Width="94" Height="53" VerticalAlignment="Bottom" Click="CancelButton_Click" />
+        <Label Content="转" Height="36" HorizontalAlignment="Left" Margin="264,28,0,0" Name="label2" VerticalAlignment="Top" FontSize="20" Width="33" />
+        <TextBlock FontSize="20" Height="30" HorizontalAlignment="Left" Margin="311,33,0,0" Name="SecTableBlock" Text="{Binding name}" DataContext="{Binding}" VerticalAlignment="Top" Width="54" />
+    </Grid>
+</Window>
