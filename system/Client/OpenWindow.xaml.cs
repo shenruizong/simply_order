@@ -104,21 +104,23 @@ namespace Client
 
         private void SendOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            DataBase.OrdersModel orders = new DataBase.OrdersModel();
-            DataBase.DatabaseDataSet.ordersDataTable ordersDt = new DataBase.DatabaseDataSet.ordersDataTable();
-            DataRow OrdersRow = ordersDt.NewRow();
-            OrdersRow["order_num"] = Order_num;
-            OrdersRow["table_id"] = (int)TableRow["id"];
-            OrdersRow["create_time"] = DateTime.Now.ToFileTime();
-            ordersDt.Rows.Add(OrdersRow);
-            DataRow[] listRow = Order_list.Select();
-            if (orders.InsertOrder(ordersDt, listRow))
+            if (OrderListView.Items.Count > 0)
             {
-                DataBase.TablesModel tables = new DataBase.TablesModel();
-                tables.ChangeTableType(TableRow, 2);
-                this.Close();
+                DataBase.OrdersModel orders = new DataBase.OrdersModel();
+                DataBase.DatabaseDataSet.ordersDataTable ordersDt = new DataBase.DatabaseDataSet.ordersDataTable();
+                DataRow OrdersRow = ordersDt.NewRow();
+                OrdersRow["order_num"] = Order_num;
+                OrdersRow["table_id"] = (int)TableRow["id"];
+                OrdersRow["create_time"] = DateTime.Now.ToFileTime();
+                ordersDt.Rows.Add(OrdersRow);
+                DataRow[] listRow = Order_list.Select();
+                if (orders.InsertOrder(ordersDt, listRow))
+                {
+                    DataBase.TablesModel tables = new DataBase.TablesModel();
+                    tables.ChangeTableType(TableRow, 2);
+                    this.Close();
+                }
             }
         }
-
     }
 }
