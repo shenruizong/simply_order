@@ -65,13 +65,13 @@ namespace Client
             {
                 OpenWindow open = new OpenWindow();
                 open.TableRow = TableRow;
-                open.Show();
+                open.ShowDialog();
             }
             else if(type_id == 2)
             {
                 OrderedWindow ordered = new OrderedWindow();
                 ordered.TableRow = TableRow;
-                ordered.Show();
+                ordered.ShowDialog();
             }
         }
     }
