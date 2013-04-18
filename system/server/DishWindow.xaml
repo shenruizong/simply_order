@@ -12,7 +12,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Width="100" Height="60" Background="#FFA2F192" ClickMode="Press" >
+                    <Button Width="100" Height="60" Background="#FFA2F192" Click="Button_Click" DataContext="{Binding Mode=OneWay}" >
                         <Grid Width="90" Height="50">
                             <TextBlock Text="{Binding name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <TextBlock TextWrapping="Wrap" Text="{Binding price}" Margin="32,0,0,0" VerticalAlignment="Bottom" RenderTransformOrigin="1.092,0.321" HorizontalAlignment="Right"/>

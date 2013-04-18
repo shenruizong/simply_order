@@ -14,5 +14,10 @@ namespace DataBase
             DataTable dt = dish.GetData();
             return dt;
         }
+        public void UpdateRow(DataRow row)
+        {
+            DatabaseDataSetTableAdapters.dishTableAdapter dish = new DatabaseDataSetTableAdapters.dishTableAdapter();
+            dish.Update(row);
+        }
     }
 }

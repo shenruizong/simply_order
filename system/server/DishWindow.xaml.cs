@@ -30,5 +30,16 @@ namespace server
             DataTable dt = Dish.SelectAll();
             DishList.ItemsSource = dt.DefaultView;
         }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// 在此处添加事件处理程序实现。
+            Button but = (Button)sender;
+            DishInfoWindow dish_info = new DishInfoWindow();
+            dish_info.DataContext = but.DataContext;
+            dish_info.Show();
+
+			
+        }
     }
 }
