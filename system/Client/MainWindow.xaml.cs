@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 using System.Globalization;
+using System.Windows.Threading;
 
 namespace Client
 {
@@ -30,12 +31,29 @@ namespace Client
         {
             Close();
         }
-
+        private DataTable AllTables;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DataBase.TablesModel tables = new DataBase.TablesModel();
-            DataTable AllTable = tables.SelectAll();
-            TablesList.ItemsSource = AllTable.DefaultView;
+            AllTables = tables.SelectAll();
+            TablesList.ItemsSource = AllTables.DefaultView;
+
+
+            DispatcherTimer dTimer = new System.Windows.Threading.DispatcherTimer();
+
+
+            dTimer.Tick += new EventHandler(dTimer_Tick);
+
+
+            dTimer.Interval = new TimeSpan(0, 0, 1);
+
+            dTimer.Start();
+        }
+        private void dTimer_Tick(object sender, EventArgs e)
+        {
+            DataBase.TablesModel tables = new DataBase.TablesModel();
+            AllTables = tables.SelectAll();
+            TablesList.ItemsSource = AllTables.DefaultView;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
