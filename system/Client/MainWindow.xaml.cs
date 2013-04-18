@@ -49,9 +49,11 @@ namespace Client
                 open.TableRow = TableRow;
                 open.Show();
             }
-            else
+            else if(type_id == 2)
             {
-                MessageBox.Show("急什么！还没开发呢！");
+                OrderedWindow ordered = new OrderedWindow();
+                ordered.TableRow = TableRow;
+                ordered.Show();
             }
         }
     }
@@ -65,6 +67,9 @@ namespace Client
             if (reValue == 2)//已开台
             {
                 BackValue = "Red";
+            }else if(reValue == 3)
+            {
+                BackValue = "blue";
             }
             return BackValue;
         }

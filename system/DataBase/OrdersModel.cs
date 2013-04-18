@@ -42,8 +42,20 @@ namespace DataBase
                 
                 return false;
             }
-            
-            
+        }
+        public string TableToOrder_num(int table_id)
+        {
+            DatabaseDataSetTableAdapters.ordersTableAdapter orders = new DatabaseDataSetTableAdapters.ordersTableAdapter();
+            DataTable dt = orders.GetDataByTable(table_id);
+            DataRow orderRow = dt.Select().First() ;
+            string orderNum = (string)orderRow["order_num"];
+            return orderNum;
+        }
+        public DataTable Order_numToOrder_info(string OrderNum)
+        {
+            DatabaseDataSetTableAdapters.order_infoTableAdapter order_info = new DatabaseDataSetTableAdapters.order_infoTableAdapter();
+            DataTable dt = order_info.GetDataByOrder_num(OrderNum);
+            return dt;
         }
     }
 }
