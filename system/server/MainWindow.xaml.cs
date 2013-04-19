@@ -26,7 +26,7 @@ namespace server
 
         private void DishButton_Click(object sender, RoutedEventArgs e)
         {
-            new DishWindow().Show();
+            new Dish.DishWindow().Show();
         }
     }
 }

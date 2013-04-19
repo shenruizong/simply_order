@@ -11,8 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Windows.Threading;
 
-namespace server
+namespace server.Dish
 {
     /// <summary>
     /// DishWindow.xaml 的交互逻辑
@@ -30,7 +31,6 @@ namespace server
             DishDataTable = Dish.SelectAll();
             DishList.ItemsSource = DishDataTable.DefaultView;
         }
-
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
         	// 在此处添加事件处理程序实现。
@@ -50,6 +50,9 @@ namespace server
                 DishDataTable.Rows.Add(Row);
                 DataBase.DishModel Dish = new DataBase.DishModel();
                 Dish.AddDish(DishDataTable);
+                DishDataTable.Clear();
+                DishDataTable = Dish.SelectAll();
+                DishList.ItemsSource = DishDataTable.DefaultView;
             }
             
         }

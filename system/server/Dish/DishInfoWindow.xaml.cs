@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 
-namespace server
+namespace server.Dish
 {
 	/// <summary>
 	/// DishInfoWindow.xaml 的交互逻辑
