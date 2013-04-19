@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="server.DishWindow"
         Title="DishWindow" Height="438" Width="676" Loaded="Window_Loaded">
     <Grid>
-        <ItemsControl Name="DishList">
+        <ItemsControl Name="DishList" Margin="0,40,0,0">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel HorizontalAlignment="Left"/>
@@ -12,7 +12,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Button Width="100" Height="60" Background="#FFA2F192" Click="Button_Click" DataContext="{Binding Mode=OneWay}" >
+                    <Button Width="100" Height="60" Background="#FFA2F192" Click="Button_Click" DataContext="{Binding Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" >
                         <Grid Width="90" Height="50">
                             <TextBlock Text="{Binding name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <TextBlock TextWrapping="Wrap" Text="{Binding price}" Margin="32,0,0,0" VerticalAlignment="Bottom" RenderTransformOrigin="1.092,0.321" HorizontalAlignment="Right"/>
@@ -21,5 +21,6 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <Button Content="添加菜品" Height="23" Margin="0,9,8,0" Name="AddButton" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="AddButton_Click" />
     </Grid>
 </Window>

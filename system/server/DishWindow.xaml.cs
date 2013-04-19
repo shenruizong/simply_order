@@ -23,12 +23,12 @@ namespace server
         {
             InitializeComponent();
         }
-
+        private DataTable DishDataTable;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DataBase.DishModel Dish = new DataBase.DishModel();
-            DataTable dt = Dish.SelectAll();
-            DishList.ItemsSource = dt.DefaultView;
+            DishDataTable = Dish.SelectAll();
+            DishList.ItemsSource = DishDataTable.DefaultView;
         }
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -38,8 +38,16 @@ namespace server
             DishInfoWindow dish_info = new DishInfoWindow();
             dish_info.DataContext = but.DataContext;
             dish_info.Show();
-
-			
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataRow Row = DishDataTable.NewRow();
+            AddDishWindow AddDish = new AddDishWindow();
+            AddDish.DataContext = Row;
+            AddDish.Show();
+            
+        }
+
     }
 }
