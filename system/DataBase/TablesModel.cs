@@ -47,6 +47,16 @@ namespace DataBase
             DataTable dt = tables.GetDataByFree();
             return dt;
         }
+        public void AddTable(DataTable dt)
+        {
+            DatabaseDataSetTableAdapters.tablesTableAdapter tableAp = new DatabaseDataSetTableAdapters.tablesTableAdapter();
+            tableAp.Update((DatabaseDataSet.tablesDataTable)dt);
+        }
+        public void UpdateRow(DataRow row)
+        {
+            DatabaseDataSetTableAdapters.tablesTableAdapter tableAp = new DatabaseDataSetTableAdapters.tablesTableAdapter();
+            tableAp.Update(row);
+        }
         
     }
 }

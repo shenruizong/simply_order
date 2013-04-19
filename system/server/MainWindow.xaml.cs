@@ -28,5 +28,10 @@ namespace server
         {
             new Dish.DishWindow().Show();
         }
+
+        private void TablesButton_Click(object sender, RoutedEventArgs e)
+        {
+            new Tables.TablesWindow().Show();
+        }
     }
 }
