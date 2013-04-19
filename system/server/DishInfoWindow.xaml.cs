@@ -43,5 +43,14 @@ namespace server
             dish.UpdateRow(RowView.Row);
             this.Close();
         }
+
+        private void DelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView RowView = (DataRowView)Window.DataContext;
+            RowView.Delete();
+            DataBase.DishModel dish = new DataBase.DishModel();
+            dish.UpdateRow(RowView.Row);
+            this.Close();
+        }
 	}
 }

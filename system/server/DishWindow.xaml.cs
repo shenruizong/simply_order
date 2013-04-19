@@ -45,7 +45,12 @@ namespace server
             DataRow Row = DishDataTable.NewRow();
             AddDishWindow AddDish = new AddDishWindow();
             AddDish.DataContext = Row;
-            AddDish.Show();
+            if (AddDish.ShowDialog().Value)
+            {
+                DishDataTable.Rows.Add(Row);
+                DataBase.DishModel Dish = new DataBase.DishModel();
+                Dish.AddDish(DishDataTable);
+            }
             
         }
 

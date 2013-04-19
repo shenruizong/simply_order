@@ -8,6 +8,6 @@
         <TextBox FontSize="16" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="66,10,0,0" Name="DishNameBox" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="94.333" />
         <TextBox FontSize="16" Height="28" HorizontalAlignment="Left" IsEnabled="True" Margin="66,42,0,0" Name="DishPriceBox" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="94.333" />
         <Button Content="保存" Height="26" HorizontalAlignment="Left" Margin="16,92,0,0" Name="SaveButton" VerticalAlignment="Top" Visibility="Visible" Width="68.667" Click="SaveButton_Click" />
-        <Button Content="取消" Height="26" HorizontalAlignment="Left" Margin="91,92,0,0" Name="CancelButton" VerticalAlignment="Top" Width="68.667" />
+        <Button Content="取消" Height="26" HorizontalAlignment="Left" Margin="91,92,0,0" Name="CancelButton" VerticalAlignment="Top" Width="68.667" Click="CancelButton_Click" />
     </Grid>
 </Window>

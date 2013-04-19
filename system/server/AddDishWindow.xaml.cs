@@ -26,12 +26,18 @@ namespace server
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = true;
             DataRow row = (DataRow)this.DataContext;
             row["name"] = DishNameBox.Text;
             row["price"] = DishPriceBox.Text;
-            DataBase.DishModel dish = new DataBase.DishModel();
-            dish.AddRow(row);
             this.Close();
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
+        }
+        
     }
 }

@@ -19,10 +19,10 @@ namespace DataBase
             DatabaseDataSetTableAdapters.dishTableAdapter dish = new DatabaseDataSetTableAdapters.dishTableAdapter();
             dish.Update(row);
         }
-        public void AddRow(DataRow row)
+        public void AddDish(DataTable dt)
         {
             DatabaseDataSetTableAdapters.dishTableAdapter dishTA = new DatabaseDataSetTableAdapters.dishTableAdapter();
-            dishTA.Update(row);
+            dishTA.Update((DatabaseDataSet.dishDataTable)dt);
         }
     }
 }

@@ -5,15 +5,16 @@
 	x:Class="server.DishInfoWindow"
 	x:Name="Window"
 	Title="DishInfoWindow"
-	Width="191" Height="173.333" WindowStyle="ToolWindow" Loaded="Window_Loaded">
+	Width="287" Height="173.333" WindowStyle="ToolWindow" Loaded="Window_Loaded">
 
 	<Grid x:Name="LayoutRoot">
 		<Label Content="菜名" HorizontalAlignment="Left" Height="28" Margin="8,13,0,0" VerticalAlignment="Top" Width="45"/>
 		<Label Content="菜价格" HorizontalAlignment="Left" Height="28" Margin="8,41,0,0" VerticalAlignment="Top" Width="45"/>
 		<TextBox x:Name="DishNameBox" Height="28" Margin="63.667,9,0,0" TextWrapping="Wrap" Text="{Binding name}" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Left" Width="94.333" IsEnabled="False"/>
 		<TextBox Height="28" Margin="63.667,41,0,0" TextWrapping="Wrap" Text="{Binding price}" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Left" Width="94.333" IsEnabled="False" Name="DishPriceBox" />
-		<Button x:Name="EditButton" Content="编辑" HorizontalAlignment="Left" Margin="16.666,0,0,17.333" Width="68.667" Height="26" VerticalAlignment="Bottom" Click="EditButton_Click" />
-        <Button x:Name="SaveButton" Content="保存" HorizontalAlignment="Left" Margin="16.666,0,0,17.333" Width="68.667" Height="26" VerticalAlignment="Bottom" Visibility="Hidden" Click="SaveButton_Click" />
-		<Button x:Name="CancelButton" Content="取消" HorizontalAlignment="Left" Margin="89.333,0,0,17.333" Width="68.667" Height="26" VerticalAlignment="Bottom"/>
-	</Grid>
+		<Button x:Name="EditButton" Content="编辑" HorizontalAlignment="Left" Margin="164,0,0,99" Width="68.667" Height="26" VerticalAlignment="Bottom" Click="EditButton_Click" />
+        <Button x:Name="SaveButton" Content="保存" HorizontalAlignment="Left" Margin="164,0,0,99" Width="68.667" Height="26" VerticalAlignment="Bottom" Visibility="Hidden" Click="SaveButton_Click" />
+		<Button x:Name="CancelButton" Content="取消" HorizontalAlignment="Left" Margin="164,0,0,67" Width="68.667" Height="26" VerticalAlignment="Bottom"/>
+        <Button Content="删除" Height="26" HorizontalAlignment="Left" Margin="164,0,0,36" Name="DelButton" VerticalAlignment="Bottom" Width="68.667" Click="DelButton_Click" />
+    </Grid>
 </Window>
