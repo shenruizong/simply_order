@@ -3,6 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="OrdersWindow" Height="474" Width="603">
     <Grid>
-        
+        <DataGrid AutoGenerateColumns="False" Height="376" HorizontalAlignment="Left" Margin="0,59,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="581" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" />
     </Grid>
 </Window>
