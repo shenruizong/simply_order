@@ -1,0 +1,8 @@
+﻿<Window x:Class="server.Order.OrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OrdersWindow" Height="474" Width="603">
+    <Grid>
+        
+    </Grid>
+</Window>
