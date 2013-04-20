@@ -3396,7 +3396,7 @@ namespace DataBase.DatabaseDataSetTableAdapters {
             this._commandCollection[1].CommandText = "SELECT   id, order_id, dish_id, dish_num, dish_price, dish_name\r\nFROM      order_" +
                 "info\r\nWHERE   (order_id = @order_num)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@order_num", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, true, 0, 0, "order_id", global::System.Data.DataRowVersion.Current, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@order_num", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, true, 0, 0, "order_id", global::System.Data.DataRowVersion.Current, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3427,13 +3427,13 @@ namespace DataBase.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByOrder_num(DatabaseDataSet.order_infoDataTable dataTable, string order_num) {
+        public virtual int FillByOrder_num(DatabaseDataSet.order_infoDataTable dataTable, global::System.Nullable<long> order_num) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((order_num == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            if ((order_num.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(order_num.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(order_num));
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3446,13 +3446,13 @@ namespace DataBase.DatabaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DatabaseDataSet.order_infoDataTable GetDataByOrder_num(string order_num) {
+        public virtual DatabaseDataSet.order_infoDataTable GetDataByOrder_num(global::System.Nullable<long> order_num) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((order_num == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            if ((order_num.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(order_num.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(order_num));
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             DatabaseDataSet.order_infoDataTable dataTable = new DatabaseDataSet.order_infoDataTable();
             this.Adapter.Fill(dataTable);

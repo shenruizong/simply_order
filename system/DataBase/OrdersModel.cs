@@ -51,7 +51,7 @@ namespace DataBase
             string orderNum = (string)orderRow["order_num"];
             return orderNum;
         }
-        public DataTable Order_numToOrder_info(string OrderNum)
+        public DataTable Order_numToOrder_info(Int64 OrderNum)
         {
             DatabaseDataSetTableAdapters.order_infoTableAdapter order_info = new DatabaseDataSetTableAdapters.order_infoTableAdapter();
             DataTable dt = order_info.GetDataByOrder_num(OrderNum);
