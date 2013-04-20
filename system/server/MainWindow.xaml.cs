@@ -33,5 +33,11 @@ namespace server
         {
             new Tables.TablesWindow().Show();
         }
+
+        private void OrderButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	// 在此处添加事件处理程序实现。
+			new Order.OrdersWindow().Show();
+        }
     }
 }
