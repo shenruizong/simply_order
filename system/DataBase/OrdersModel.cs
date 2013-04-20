@@ -26,7 +26,7 @@ namespace DataBase
                 foreach (DataRow row in order_list)
                 {
                     DataRow InfoRow = infoDt.NewRow();
-                    InfoRow["order_id"] = (string)orders_Row["order_num"];
+                    InfoRow["order_id"] = (Int64)orders_Row["order_num"];
                     InfoRow["dish_id"] = (int)row["Dish_id"];
                     InfoRow["dish_num"] = (int)row["Dish_num"];
                     InfoRow["dish_price"] = (int)row["Dish_price"];

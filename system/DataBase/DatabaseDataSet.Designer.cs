@@ -1088,7 +1088,7 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ordersRow AddordersRow(string order_num, int table_id, string create_time, string finish_time) {
+            public ordersRow AddordersRow(long order_num, int table_id, string create_time, string finish_time) {
                 ordersRow rowordersRow = ((ordersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1103,7 +1103,7 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ordersRow FindByidorder_num(int id, string order_num) {
+            public ordersRow FindByidorder_num(int id, long order_num) {
                 return ((ordersRow)(this.Rows.Find(new object[] {
                             id,
                             order_num})));
@@ -1138,7 +1138,7 @@ namespace DataBase {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnorder_num = new global::System.Data.DataColumn("order_num", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnorder_num = new global::System.Data.DataColumn("order_num", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnorder_num);
                 this.columntable_id = new global::System.Data.DataColumn("table_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntable_id);
@@ -1155,7 +1155,6 @@ namespace DataBase {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnorder_num.AllowDBNull = false;
-                this.columnorder_num.MaxLength = 100;
                 this.columncreate_time.MaxLength = 100;
                 this.columnfinish_time.MaxLength = 100;
             }
@@ -1421,7 +1420,7 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public order_infoRow Addorder_infoRow(string order_id, int dish_id, int dish_num, int dish_price, string dish_name) {
+            public order_infoRow Addorder_infoRow(long order_id, int dish_id, int dish_num, int dish_price, string dish_name) {
                 order_infoRow roworder_infoRow = ((order_infoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1472,7 +1471,7 @@ namespace DataBase {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnorder_id = new global::System.Data.DataColumn("order_id", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnorder_id = new global::System.Data.DataColumn("order_id", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnorder_id);
                 this.columndish_id = new global::System.Data.DataColumn("dish_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndish_id);
@@ -1490,7 +1489,6 @@ namespace DataBase {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
-                this.columnorder_id.MaxLength = 100;
                 this.columndish_name.MaxLength = 100;
             }
             
@@ -1792,9 +1790,9 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string order_num {
+            public long order_num {
                 get {
-                    return ((string)(this[this.tableorders.order_numColumn]));
+                    return ((long)(this[this.tableorders.order_numColumn]));
                 }
                 set {
                     this[this.tableorders.order_numColumn] = value;
@@ -1913,10 +1911,10 @@ namespace DataBase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string order_id {
+            public long order_id {
                 get {
                     try {
-                        return ((string)(this[this.tableorder_info.order_idColumn]));
+                        return ((long)(this[this.tableorder_info.order_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("表“order_info”中列“order_id”的值为 DBNull。", e);
