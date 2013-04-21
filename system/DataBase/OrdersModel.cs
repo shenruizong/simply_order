@@ -43,12 +43,12 @@ namespace DataBase
                 return false;
             }
         }
-        public string TableToOrder_num(int table_id)
+        public Int64 TableToOrder_num(int table_id)
         {
             DatabaseDataSetTableAdapters.ordersTableAdapter orders = new DatabaseDataSetTableAdapters.ordersTableAdapter();
             DataTable dt = orders.GetDataByTable(table_id);
             DataRow orderRow = dt.Select().First() ;
-            string orderNum = (string)orderRow["order_num"];
+            Int64 orderNum = (Int64)orderRow["order_num"];
             return orderNum;
         }
         public DataTable Order_numToOrder_info(Int64 OrderNum)

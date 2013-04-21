@@ -29,7 +29,7 @@ namespace Client
         {
             int table_id = (int)TableRow["id"];
             DataBase.OrdersModel orders = new DataBase.OrdersModel();
-            Int64 Order_num = long.Parse(orders.TableToOrder_num(table_id));
+            Int64 Order_num = orders.TableToOrder_num(table_id);
             DataTable OrderList = orders.Order_numToOrder_info(Order_num);
             OrderListView.ItemsSource = OrderList.DefaultView;
             OrderNumBlock.Text = Order_num.ToString();
