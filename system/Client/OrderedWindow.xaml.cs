@@ -34,8 +34,6 @@ namespace Client
             OrderListView.ItemsSource = OrderList.DefaultView;
             OrderNumBlock.Text = Order_num.ToString();
             TableNameBlock.Text = (string)TableRow["name"];
-
-
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
