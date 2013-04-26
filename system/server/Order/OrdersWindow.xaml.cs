@@ -49,6 +49,11 @@ namespace server.Order
                 OrderList.UnselectAll();
             }
         }
+
+        private void CheckOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
     [ValueConversion(typeof(Int64), typeof(int))]
     public class OrderToPriceConverter : IValueConverter

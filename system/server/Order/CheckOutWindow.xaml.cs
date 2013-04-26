@@ -10,29 +10,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Data;
-using System.Globalization;
 
 namespace server.Order
 {
     /// <summary>
-    /// OrderInfoWindow.xaml 的交互逻辑
+    /// CheckOutWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class OrderInfoWindow : Window
+    public partial class CheckOutWindow : Window
     {
-        public DataRowView RowView;
-        public OrderInfoWindow()
+        public CheckOutWindow()
         {
             InitializeComponent();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DataRowView RowView = (DataRowView)this.DataContext;
-            Int64 Order_num = Int64.Parse(RowView["order_num"].ToString());
-            DataBase.OrderInfoModel info = new DataBase.OrderInfoModel();
-            DataTable dt = info.GetByOrderid(Order_num);
-            DishList.ItemsSource = dt.DefaultView;
+            DataBase.OrdersModel orders = new DataBase.OrdersModel();
         }
+
     }
 }
