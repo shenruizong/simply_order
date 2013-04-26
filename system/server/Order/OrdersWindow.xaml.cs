@@ -41,9 +41,13 @@ namespace server.Order
 
         private void OrderList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            OrderInfoWindow OrderInfo = new OrderInfoWindow();
-            OrderInfo.DataContext = sender;
-            OrderInfo.Show();
+            if (OrderList.SelectedIndex!=-1)
+            {
+                OrderInfoWindow OrderInfo = new OrderInfoWindow();
+                OrderInfo.DataContext = OrderList.SelectedItem;
+                OrderInfo.Show();
+                OrderList.UnselectAll();
+            }
         }
     }
     [ValueConversion(typeof(Int64), typeof(int))]
@@ -77,10 +81,17 @@ namespace server.Order
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            long reValue = System.Convert.ToInt64(value);
-            DateTime dtime = DateTime.FromFileTime(reValue);
-            string time = dtime.ToString();
-            return time;
+            if (value != DBNull.Value)
+            {
+                long reValue = System.Convert.ToInt64(value);
+                DateTime dtime = DateTime.FromFileTime(reValue);
+                string time = dtime.ToString();
+                return time;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

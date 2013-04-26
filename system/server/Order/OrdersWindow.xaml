@@ -11,14 +11,16 @@
         <local:OrderToPriceConverter x:Key="OrderToPrice"/>
     </Window.Resources>
         <Grid>
-        <DataGrid AutoGenerateColumns="False" Height="376" HorizontalAlignment="Left" Margin="0,59,0,0" x:Name="OrderList" VerticalAlignment="Top" Width="581" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" MouseDoubleClick="OrderList_MouseDoubleClick">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="订单号" Binding="{Binding order_num}" IsReadOnly="True" />
-                <DataGridTextColumn Header="消费金额" Binding="{Binding order_num, Converter={StaticResource OrderToPrice}}" IsReadOnly="True" />
-                <DataGridTextColumn Header="订单开始时间" Binding="{Binding create_time, Converter={StaticResource time}}" IsReadOnly="True" />
-                <DataGridTextColumn Header="订单结束时间" Binding="{Binding finish_time, Converter={StaticResource time}}" IsReadOnly="True" />
-            </DataGrid.Columns>
-        </DataGrid>
+        <ListView Margin="0,59,0,0" Height="376" Width="581" Name="OrderList" MouseDoubleClick="OrderList_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="订单号"  DisplayMemberBinding="{Binding order_num}"/>
+                    <GridViewColumn Header="消费金额" DisplayMemberBinding="{Binding order_num, Converter={StaticResource OrderToPrice}}"/>
+                    <GridViewColumn Header="订单开始时间" DisplayMemberBinding="{Binding create_time, Converter={StaticResource time}}"/>
+                    <GridViewColumn Header="订单结束时间" DisplayMemberBinding="{Binding finish_time, Converter={StaticResource time}}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button x:Name="CheckOutButton" Content="结账" HorizontalAlignment="Right" Height="25" Margin="0,8,8,0" VerticalAlignment="Top" Width="125"/>
         <DatePicker x:Name="StartTime" HorizontalAlignment="Left" Height="25" Margin="23,8,0,0" VerticalAlignment="Top" Width="120" SelectedDateFormat="Short"/>
         <Label Content="~" HorizontalAlignment="Left" Height="25" Margin="147,8,0,0" VerticalAlignment="Top" Width="21"/>
