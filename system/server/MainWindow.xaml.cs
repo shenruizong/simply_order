@@ -66,5 +66,11 @@ namespace server
                 OrdersWindow.Show();
             }
         }
+
+        private void StatisticsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Statistics.StatisticsWindow windows = new Statistics.StatisticsWindow();
+            windows.Show();
+        }
     }
 }

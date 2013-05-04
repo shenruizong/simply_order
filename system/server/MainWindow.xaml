@@ -7,7 +7,7 @@
             <Button Content="菜品管理" Height="54" Name="DishButton" Width="94" FontSize="20" FontWeight="Bold" Click="DishButton_Click" />
             <Button Content="桌台管理" FontSize="20" FontWeight="Bold" Height="54" Name="TablesButton" Width="94" Click="TablesButton_Click" />
             <Button Content="订单管理" FontSize="20" FontWeight="Bold" Height="54" Name="OrderButton" Width="94" Click="OrderButton_Click" />
-            <Button Content="店长统计" FontSize="20" FontWeight="Bold" Height="54" Name="StatisticsButton" Width="94" />
+            <Button Content="店长统计" FontSize="20" FontWeight="Bold" Height="54" Name="StatisticsButton" Width="94" Click="StatisticsButton_Click" />
         </WrapPanel>
     </Grid>
 </Window>
