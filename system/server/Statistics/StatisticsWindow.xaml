@@ -4,8 +4,13 @@
         Title="StatisticsWindow" Height="523" Width="759">
     <Grid>
         <TabControl Height="484" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top" Width="737">
-            <TabItem Header="tabItem1" Name="tabItem1">
-                <Grid />
+            <TabItem Header="菜品统计" Name="tabItem1">
+                <Grid>
+                    <DatePicker Height="25" HorizontalAlignment="Left" Margin="64,6,0,0" Name="datePicker1" VerticalAlignment="Top" Width="115" />
+                    <DatePicker Height="25" HorizontalAlignment="Left" Margin="247,6,0,0" Name="datePicker2" VerticalAlignment="Top" Width="115" />
+                    <Label Content="从" Height="28" HorizontalAlignment="Left" Margin="18,3,0,0" Name="label1" VerticalAlignment="Top" />
+                    <Label Content="到" Height="28" HorizontalAlignment="Left" Margin="201,6,0,0" Name="label2" VerticalAlignment="Top" />
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
