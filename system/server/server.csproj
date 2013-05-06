@@ -78,15 +78,15 @@
     <Compile Include="Tables\TablesWindow.xaml.cs">
       <DependentUpon>TablesWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dish\AddDishWindow.xaml">
+    <Page Include="Order\Dish\AddDishWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dish\DishInfoWindow.xaml">
+    <Page Include="Order\Dish\DishInfoWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Dish\DishWindow.xaml">
+    <Page Include="Order\Dish\DishWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,17 +94,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Dish\AddDishWindow.xaml.cs">
+    <Compile Include="Order\Dish\AddDishWindow.xaml.cs">
       <DependentUpon>AddDishWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Dish\DishInfoWindow.xaml.cs">
+    <Compile Include="Order\Dish\DishInfoWindow.xaml.cs">
       <DependentUpon>DishInfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dish\DishWindow.xaml.cs">
+    <Compile Include="Order\Dish\DishWindow.xaml.cs">
       <DependentUpon>DishWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">

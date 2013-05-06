@@ -10,7 +10,7 @@ namespace DataBase
     {
         public DataTable GetByOrderid(Int64 order_id)
         {
-            DatabaseDataSetTableAdapters.order_infoTableAdapter infoAp = new DatabaseDataSetTableAdapters.order_infoTableAdapter();
+            systemDataSetTableAdapters.order_infoTableAdapter infoAp = new systemDataSetTableAdapters.order_infoTableAdapter();
             DataTable dt = infoAp.GetDataByOrder_num(order_id);
             return dt;
         }

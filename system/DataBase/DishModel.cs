@@ -10,19 +10,19 @@ namespace DataBase
     {
         public DataTable SelectAll()
         {
-            DatabaseDataSetTableAdapters.dishTableAdapter dish = new DatabaseDataSetTableAdapters.dishTableAdapter();
+            systemDataSetTableAdapters.dishTableAdapter dish = new systemDataSetTableAdapters.dishTableAdapter();
             DataTable dt = dish.GetData();
             return dt;
         }
         public void UpdateRow(DataRow row)
         {
-            DatabaseDataSetTableAdapters.dishTableAdapter dish = new DatabaseDataSetTableAdapters.dishTableAdapter();
+            systemDataSetTableAdapters.dishTableAdapter dish = new systemDataSetTableAdapters.dishTableAdapter();
             dish.Update(row);
         }
         public void AddDish(DataTable dt)
         {
-            DatabaseDataSetTableAdapters.dishTableAdapter dishTA = new DatabaseDataSetTableAdapters.dishTableAdapter();
-            dishTA.Update((DatabaseDataSet.dishDataTable)dt);
+            systemDataSetTableAdapters.dishTableAdapter dishTA = new systemDataSetTableAdapters.dishTableAdapter();
+            dishTA.Update((systemDataSet.dishDataTable)dt);
         }
     }
 }

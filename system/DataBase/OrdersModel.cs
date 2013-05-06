@@ -10,19 +10,19 @@ namespace DataBase
     {
         public DataTable SelectAll()
         {
-            DatabaseDataSetTableAdapters.ordersTableAdapter orders = new DatabaseDataSetTableAdapters.ordersTableAdapter();
+            systemDataSetTableAdapters.ordersTableAdapter orders = new systemDataSetTableAdapters.ordersTableAdapter();
             DataTable dt = orders.GetData();
             return dt;
         }
-        public Boolean InsertOrder(DatabaseDataSet.ordersDataTable Orders,DataRow[] order_list)
+        public Boolean InsertOrder(systemDataSet.ordersDataTable Orders,DataRow[] order_list)
         {
 
             try
             {
-                DatabaseDataSetTableAdapters.ordersTableAdapter orders = new DatabaseDataSetTableAdapters.ordersTableAdapter();
+                systemDataSetTableAdapters.ordersTableAdapter orders = new systemDataSetTableAdapters.ordersTableAdapter();
                 DataRow orders_Row = Orders.Select().First();
-                DatabaseDataSetTableAdapters.order_infoTableAdapter orderInfo = new DatabaseDataSetTableAdapters.order_infoTableAdapter();
-                DatabaseDataSet.order_infoDataTable infoDt = new DatabaseDataSet.order_infoDataTable();
+                systemDataSetTableAdapters.order_infoTableAdapter orderInfo = new systemDataSetTableAdapters.order_infoTableAdapter();
+                systemDataSet.order_infoDataTable infoDt = new systemDataSet.order_infoDataTable();
                 foreach (DataRow row in order_list)
                 {
                     DataRow InfoRow = infoDt.NewRow();
@@ -45,7 +45,7 @@ namespace DataBase
         }
         public Int64 TableToOrder_num(int table_id)
         {
-            DatabaseDataSetTableAdapters.ordersTableAdapter orders = new DatabaseDataSetTableAdapters.ordersTableAdapter();
+            systemDataSetTableAdapters.ordersTableAdapter orders = new systemDataSetTableAdapters.ordersTableAdapter();
             DataTable dt = orders.GetDataByTable(table_id);
             DataRow orderRow = dt.Select().First() ;
             Int64 orderNum = (Int64)orderRow["order_num"];
@@ -53,7 +53,7 @@ namespace DataBase
         }
         public DataTable Order_numToOrder_info(Int64 OrderNum)
         {
-            DatabaseDataSetTableAdapters.order_infoTableAdapter order_info = new DatabaseDataSetTableAdapters.order_infoTableAdapter();
+            systemDataSetTableAdapters.order_infoTableAdapter order_info = new systemDataSetTableAdapters.order_infoTableAdapter();
             DataTable dt = order_info.GetDataByOrder_num(OrderNum);
             return dt;
         }

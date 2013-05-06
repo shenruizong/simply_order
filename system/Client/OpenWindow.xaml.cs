@@ -107,7 +107,7 @@ namespace Client
             if (OrderListView.Items.Count > 0)
             {
                 DataBase.OrdersModel orders = new DataBase.OrdersModel();
-                DataBase.DatabaseDataSet.ordersDataTable ordersDt = new DataBase.DatabaseDataSet.ordersDataTable();
+                DataBase.systemDataSet.ordersDataTable ordersDt = new DataBase.systemDataSet.ordersDataTable();
                 DataRow OrdersRow = ordersDt.NewRow();
                 OrdersRow["order_num"] = Order_num;
                 OrdersRow["table_id"] = (int)TableRow["id"];
